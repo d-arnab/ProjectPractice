@@ -1,0 +1,6 @@
+<p>child1 works!</p>
+<p>{{ receiveData }}</p>
+<button (click)="notShowDirectictiveToggle()">Click for toggle</button>
+<p *notShowDirective = "toggleDirective">directive showing</p>
+<p *notShowDirective = "!toggleDirective">directive not showing</p>
+

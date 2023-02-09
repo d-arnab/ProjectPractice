@@ -1,0 +1,25 @@
+<p appAttribute>home works!</p>
+<nav style="text-align: center;">
+    <a [routerLink] = "['homeChild2']">Second Home Child</a>
+    <a [routerLink] = "['homeChild3']">Third Home Child</a>
+    <button (click)="childRoute('Fourth')">Fourth Home Child</button>
+    <button (click)="childRoute('Fifth')">Fifth Home Child</button>
+</nav>
+<router-outlet></router-outlet>
+<router-outlet name="testingMultipleOutlet"></router-outlet>
+<app-home-child (countChanged)="countChangedHandeler($event)"></app-home-child>
+<p>current count from child {{incomingCountFromChild}}</p>
+<br/>
+<button (click)="sendData()">Click here</button>
+<button (click)="getMockData()">Mock API CALL</button>
+<button (click) = "mergeAllGetMockData()">Multiple APi Call Handle</button>
+<button (click) = "combineLatestGetMockData()">Multiple APi Call Handle using CombineLatest</button>
+<br/>
+<input type="text" placeholder="First Name" [(ngModel)]="FirstName"/>
+<br/>
+<input type="text" placeholder="Middle Name" [(ngModel)]="MiddleName"/>
+<br/>
+<input type="text" placeholder="Last Name" [(ngModel)]="LastName"/>
+<br/>
+<p>{{FirstName |custom:FirstName:MiddleName:LastName }}</p>
+<ng-container><p>Hi</p></ng-container> <ng-template><p>Hello</p></ng-template>
